@@ -10,12 +10,14 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.text.DecimalFormat;
 
 import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class DigitalClockGUI extends JFrame {
 
@@ -74,8 +76,12 @@ public class DigitalClockGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public DigitalClockGUI() {
+		
+		setTitle("Digital Alarm Clock");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DigitalClockGUI.class.getResource("")));
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 613, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -141,6 +147,11 @@ public class DigitalClockGUI extends JFrame {
 		});
 		btnClearAlarm.setBounds(160, 156, 110, 23);
 		contentPane.add(btnClearAlarm);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Mattias Wendt\\Downloads\\GoT.png"));
+		lblNewLabel_1.setBounds(341, 21, 246, 180);
+		contentPane.add(lblNewLabel_1);
 		
 		clockLogic = new ClockLogic(this);
 	}
